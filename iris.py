@@ -1,4 +1,7 @@
 from sklearn.datasets import load_iris
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score, classification_report
+from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
@@ -15,3 +18,6 @@ print(f'Iris first 5 rows:\n {iris_df.head()}')
 print(f'Iris summaries:\n{iris_df[iris.feature_names].describe()}')
 sns.heatmap(iris_df.corr())
 plt.show()
+
+
+
