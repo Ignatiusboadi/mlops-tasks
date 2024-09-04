@@ -1,6 +1,6 @@
 from sklearn.datasets import load_iris
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score, classification_report
+from sklearn.metrics import accuracy_score, classification_report, confusion_matrix, ConfusionMatrixDisplay
 from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -35,3 +35,8 @@ accuracy = accuracy_score(y_test, y_pred)
 print(f'Model accuracy: {accuracy}')
 print(f"Classification report\n: {classification_report(y_test, y_pred)}")
 
+
+cm = confusion_matrix(y_test, y_pred)
+disp = ConfusionMatrixDisplay(cm, display_labels=iris.target_names)
+disp.plot(cmap=plt.cm.Blues)
+plt.show()
