@@ -19,5 +19,11 @@ print(f'Iris summaries:\n{iris_df[iris.feature_names].describe()}')
 sns.heatmap(iris_df.corr())
 plt.show()
 
+# logistic regression implementation
+X = iris_df.drop(columns=['target'])
+y = iris_df['target']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=2)
+
 
 
